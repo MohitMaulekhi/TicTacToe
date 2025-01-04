@@ -87,7 +87,7 @@ class _GameScreenState extends State<GameScreen> {
   void showTieDialog() {
     showDialog(
         context: context,
-        builder: (context) => AlertDialog(
+        builder: (context) => const AlertDialog(
               title: Text("Tic Tac Toe"),
               content: Text("Game is draw"),
             )).then((value) => Navigator.of(context).pop());
@@ -97,7 +97,7 @@ class _GameScreenState extends State<GameScreen> {
     showDialog(
         context: context,
         builder: (context) => AlertDialog(
-              title: Text("Tic Tac Toe"),
+              title: const Text("Tic Tac Toe"),
               content: Text("${turn ? 'X' : 'O'} has won"),
             )).then((value) => Navigator.of(context).pop());
   }
@@ -107,14 +107,14 @@ class _GameScreenState extends State<GameScreen> {
     return Scaffold(
         body: SizedBox.expand(
       child: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
             gradient: LinearGradient(
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
                 tileMode: TileMode.clamp,
                 colors: [
-              const Color(0xFF07C7F9),
-              const Color(0xFF3189DC),
+              Color(0xFF07C7F9),
+              Color(0xFF3189DC),
             ])),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -122,7 +122,7 @@ class _GameScreenState extends State<GameScreen> {
           children: [
             Text(
               "Player ${turn ? 'O' : 'X'}'s Turn",
-              style: TextStyle(
+              style: const TextStyle(
                   fontSize: 48,
                   color: Colors.white,
                   fontWeight: FontWeight.w600),
@@ -130,7 +130,7 @@ class _GameScreenState extends State<GameScreen> {
             GridView.count(
               shrinkWrap: true,
               crossAxisCount: 3,
-              padding: EdgeInsets.symmetric(vertical: 32, horizontal: 32),
+              padding: const EdgeInsets.symmetric(vertical: 32, horizontal: 32),
               children: [
                 GridBox(
                   right: true,
@@ -223,26 +223,26 @@ class GridBox extends StatelessWidget {
     return InkWell(
         onTap: () => onClicked(),
         child: Container(
-          padding: EdgeInsets.all(16),
+          padding: const EdgeInsets.all(16),
           decoration: BoxDecoration(
             border: Border(
               right: right
-                  ? BorderSide(color: Colors.white, width: 2)
+                  ? const BorderSide(color: Colors.white, width: 2)
                   : BorderSide.none,
               left: left
-                  ? BorderSide(color: Colors.white, width: 2)
+                  ? const BorderSide(color: Colors.white, width: 2)
                   : BorderSide.none,
               top: top
-                  ? BorderSide(color: Colors.white, width: 2)
+                  ? const BorderSide(color: Colors.white, width: 2)
                   : BorderSide.none,
               bottom: bottom
-                  ? BorderSide(color: Colors.white, width: 2)
+                  ? const BorderSide(color: Colors.white, width: 2)
                   : BorderSide.none,
             ),
           ),
           child: player != null
               ? SvgPicture.asset("assets/${player! ? 'O' : 'X'}.svg")
-              : SizedBox.shrink(),
+              : const SizedBox.shrink(),
         ));
   }
 }

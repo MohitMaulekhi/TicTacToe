@@ -27,22 +27,22 @@ class _StartScreenState extends State<StartScreen> {
         Image.asset(
           "assets/background.png",
           fit: BoxFit.fill,
-          key: Key("value"),
+          key: const Key("value"),
         ),
         Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Spacer(),
-            Text(
+            const Spacer(),
+            const Text(
               "TIC-TAC-TOE",
               style: TextStyle(
                   color: Colors.white,
                   fontSize: 56,
                   fontWeight: FontWeight.bold),
             ),
-            Spacer(),
-            Text(
+            const Spacer(),
+            const Text(
               "Pick who goes first?",
               style: TextStyle(color: Colors.white, fontSize: 32),
             ),
@@ -53,7 +53,7 @@ class _StartScreenState extends State<StartScreen> {
                 InkWell(
                   onTap: () => onStartButtonPressed(true),
                   child: Container(
-                    padding: EdgeInsets.all(16),
+                    padding: const EdgeInsets.all(16),
                     decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(16)),
@@ -64,13 +64,13 @@ class _StartScreenState extends State<StartScreen> {
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 16,
                 ),
                 InkWell(
                   onTap: () => onStartButtonPressed(false),
                   child: Container(
-                    padding: EdgeInsets.all(16),
+                    padding: const EdgeInsets.all(16),
                     decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(16)),
@@ -83,7 +83,7 @@ class _StartScreenState extends State<StartScreen> {
                 )
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 32,
             )
           ],
